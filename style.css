@@ -1,0 +1,224 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  background: 
+    /* White at top fading to transparent */ linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.367) 0%,
+      transparent 50%
+    ),
+    /* Your existing gradients */
+      linear-gradient(to bottom, transparent 60%, rgba(21, 21, 21, 0.4) 100%),
+    linear-gradient(to right, rgba(21, 21, 21, 0.2), transparent 30%),
+    linear-gradient(to left, rgba(21, 21, 21, 0.2), transparent 30%),
+    rgba(57, 167, 187, 0.627);
+
+  /* Remove blend mode for proper layering */
+  /* background-blend-mode: multiply; */
+  height: 100vh; /* full viewport height */
+  width: 100vw; /* full viewport width */
+  display: flex; /* make children side-by-side */
+  justify-content: space-between; /* optional: space between them */
+  align-items: center; /* vertically center if different heights */
+}
+.left-container,
+.mid-container,
+.right-container {
+  flex: 1; /* each takes equal space */
+  /* OR customize width if needed */
+  /* width: 30%; */
+  min-height: 100%; /* this will make sure they fill the .container’s height */
+  position: relative; /* so absolutely positioned children are relative to these */
+}
+
+.right-image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 95%;
+}
+.text-container {
+  top: 30%;
+  left: 5%;
+  position: absolute;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  gap: 20px; /* spacing between title, paragraph, button */
+}
+.page-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  color: #333;
+  color: white;
+  line-height: 0.8; /* reduces space between lines */
+  margin: 0; /* removes default margins */
+  text-align: left;
+}
+.page-prg {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 1rem;
+  font-weight: 100;
+}
+.buy-now-btn {
+  background-color: #ff8000;
+  width: 40%;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 40px;
+  cursor: pointer;
+
+  align-self: center; /* this centers the button in the flex column */
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #ff5500;
+  box-shadow: 0 0 10px 3px #ff5500;
+}
+
+/* Navbar container */
+.navbar {
+  position: fixed; /* stay on top when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center buttons horizontally */
+  gap: 5%;
+  padding: 15px 0;
+  z-index: 1000; /* keep on top */
+  font-family: "Orbitron", sans-serif;
+  background-color: rgba(240, 248, 255, 0.108);
+}
+
+/* Navbar buttons */
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background-color: white;
+  color: rgba(57, 167, 187, 1);
+  border-color: rgba(57, 167, 187, 1);
+}
+
+.nav-logo {
+  position: absolute;
+
+  width: 3%; /* adjust size as needed */
+  left: 2%;
+}
+.user-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  right: 2%;
+  width: 6%; /* define size relative to navbar or container */
+  height: auto; /* height will auto-scale */
+}
+
+.user-icon {
+  width: 40%; /* fill the button width */
+  height: auto; /* maintain aspect ratio */
+  filter: invert(1); /* make icon white if needed */
+}
+.item-image {
+  width: 70%;
+  height: auto;
+}
+.item-container {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  background-color: #37373740; /* teal-ish */
+  top: 50%; /* push to 50% down of parent */
+  left: 50%; /* push to 50% right of parent */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* pull back by half its own size to center */
+  border-radius: 40px;
+
+  display: flex; /* enable flexbox */
+  flex-direction: column; /* stack children vertically */
+  align-items: center; /* optional: center children horizontally */
+  gap: 0; /* space between items */
+  padding: 1%; /* optional: padding inside the container */
+  transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out,
+    transform 0.4s ease-out;
+}
+
+.item-container:hover {
+  box-shadow: 0 8px 16px rgba(121, 121, 121, 0.5),
+    0 0 12px 4px rgba(57, 167, 187, 0.5);
+}
+.center-container {
+  display: flex;
+  justify-content: center; /* center content horizontally */
+  align-items: center; /* center content vertically (if you want) */
+  position: relative;
+}
+.item-title {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.side-btn {
+  background: none; /* no background */
+  border: none; /* no border */
+  color: white; /* icon color */
+  cursor: pointer; /* still shows pointer on hover */
+  font-size: 2rem; /* size of the icon */
+  padding: 0; /* remove padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.side-btn:hover {
+  color: #ff8000; /* change icon color on hover */
+}
+
+.footer {
+  position: fixed;
+  bottom: 2%;
+  right: 11%;
+  display: flex;
+  gap: 1em; /* about the size of a character */
+  z-index: 999;
+}
+
+.social-icon {
+  width: 1.5vw; /* icon scales based on viewport width */
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: invert(1); /* make icon white if needed */
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
