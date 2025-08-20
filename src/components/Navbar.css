@@ -1,0 +1,79 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed; /* stay on top when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center buttons horizontally */
+  gap: 5%;
+  padding: 15px 0;
+  z-index: 1000; /* keep on top */
+  font-family: "Orbitron", sans-serif;
+  background-color: rgba(0, 0, 0, 0.645);
+}
+.left,
+.mid,
+.right {
+  margin: 0 30px; /* ⬅️ adds horizontal space between buttons */
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.right {
+  justify-content: flex-end;
+}
+.mid {
+  flex: 3;
+  justify-content: center;
+}
+.left {
+  margin: 0 30px; /* ⬅️ adds horizontal space between buttons */
+}
+
+/* Navbar buttons */
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  margin: 0 30px; /* ⬅️ adds horizontal space between buttons */
+}
+.nav-btn:hover {
+  background-color: white;
+  color: rgba(57, 167, 187, 1);
+  border-color: rgba(57, 167, 187, 1);
+}
+
+.nav-logo {
+  position: absolute;
+
+  width: 3%; /* adjust size as needed */
+}
+.navbar-user-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between buttons */
+}
+.user-button {
+  background: none;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.user-button:hover {
+  color: rgba(57, 167, 187, 1);
+}

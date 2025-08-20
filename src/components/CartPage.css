@@ -1,0 +1,141 @@
+.cart-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 40px;
+  padding: 100px;
+  background-color: #f8f9fa; /* light gray background */
+}
+
+.cart-items {
+  flex: 2; /* main content takes more space */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-items h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+}
+
+.cart-img-container {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+}
+
+.cart-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cart-details h2 {
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.cart-details .price {
+  font-weight: bold;
+  color: #444;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.cart-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.cart-btn.increment {
+  background: #28a745;
+  color: white;
+}
+
+.cart-btn.increment:hover {
+  background: #218838;
+}
+
+.cart-btn.decrement {
+  background: #dc3545;
+  color: white;
+}
+
+.cart-btn.decrement:hover {
+  background: #c82333;
+}
+
+/* ✅ Order Summary */
+.cart-summary {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-summary p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.checkout-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.checkout-btn:hover {
+  background: #0056b3;
+}

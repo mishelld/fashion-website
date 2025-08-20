@@ -1,0 +1,116 @@
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+}
+.shop-title {
+  color: rgb(98, 98, 98);
+  font-weight: 100;
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 30px; /* optional spacing between items */
+  align-items: center;
+  /* padding order goes: top, right, bottom, left */
+
+  padding: 50px 50px 50px 50px;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  position: relative; /* needed for overlay positioning */
+
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(238, 249, 255, 0.721);
+  padding: 30px;
+  gap: 10px;
+  overflow: hidden; /* so overlay doesn’t spill outside */
+  transition: transform 0.3s ease;
+}
+
+/* Dark overlay */
+.item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* dark semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* behind the button */
+}
+
+/* Show overlay on hover */
+.item:hover::after {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 10px 20px;
+  background-color: #292929;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show button on hover */
+.item:hover .add-to-cart-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+.add-to-cart-btn:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.item h1,
+.item p {
+  margin: 0;
+  padding: 0;
+  color: rgb(98, 98, 98);
+}
+.item h1,
+.item p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.categories {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.category-btn.active {
+  background: #333;
+  color: #fff;
+}

@@ -1,0 +1,81 @@
+.Hero-container {
+  background: 
+    /* White at top fading to transparent */ linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.367) 0%,
+      transparent 50%
+    ),
+    /* Your existing gradients */
+      linear-gradient(to bottom, transparent 60%, rgba(21, 21, 21, 0.4) 100%),
+    linear-gradient(to right, rgba(21, 21, 21, 0.2), transparent 30%),
+    linear-gradient(to left, rgba(21, 21, 21, 0.2), transparent 30%),
+    rgba(57, 167, 187, 0.627);
+
+  height: 100vh; /* full viewport height */
+  display: flex; /* make children side-by-side */
+  justify-content: space-between; /* optional: space between them */
+  align-items: center; /* vertically center if different heights */
+}
+
+.left-side,
+.mid-side,
+.right-side {
+  flex: 1; /* each takes equal space */
+  /* OR customize width if needed */
+  /* width: 30%; */
+  min-height: 100%; /* this will make sure they fill the .container’s height */
+  position: relative; /* so absolutely positioned children are relative to these */
+}
+
+.left-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%); /* Pulls it up by half its height */
+  gap: 20px; /* spacing between title, paragraph, button */
+}
+.page-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  color: #333;
+  color: white;
+  line-height: 0.8; /* reduces space between lines */
+  margin: 0; /* removes default margins */
+  text-align: left;
+}
+.page-prg {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: left;
+}
+.buy-now-btn {
+  border: none; /* removes default border */
+
+  background-color: #00000081;
+  width: 40%;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: left; /* this centers the button in the flex column */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #000000;
+}
+
+.image {
+  width: 60%;
+  height: auto;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centers it horizontally */
+}

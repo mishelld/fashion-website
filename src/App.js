@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HeroSection from "./components/HeroSection";
+import ShopSection from "./components/ShopSection";
+import AdvertSection from "./components/AdvertSection";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import AuthForm from "./components/AuthForm";
+import CartPage from "./components/CartPage";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <ShopSection />
+      <AdvertSection />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Auth" element={<AuthForm />} />
+        <Route path="/cartPage" element={<CartPage />} />
+        <Route path="/Shop" element={<ShopSection />} />
+      </Routes>
+    </Router>
   );
 }
 
