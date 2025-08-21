@@ -1,6 +1,6 @@
 # 👗 Fashion Website
 
-**Fashion Website** is a modern full-stack **e-commerce website** built with **React**, **CSS**, **Node.js/Express**, and **MongoDB**.  
+This is a demo of a modern full-stack **e-commerce website** built with **React**, **CSS**, **Node.js/Express**, and **MongoDB**.  
 It allows users to **browse items and add or remove them from their cart**, while admins can **add new items to the website**.
 
 ![Screenshot description](Fashion_Website_img.png)
